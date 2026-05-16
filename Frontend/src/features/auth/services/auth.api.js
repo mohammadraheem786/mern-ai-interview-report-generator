@@ -31,12 +31,8 @@ export const login = async (email, password) => {
 }
 
 export const logout = async () => {
-    try {
-        localStorage.removeItem("token");
-        return { message: "Logged out successfully" };
-    } catch (error) {
-        console.log('Logout error:', error);
-    }
+    localStorage.removeItem("token");
+    return { message: "Logged out successfully" };
 }
 
 export const getUser = async () => {
@@ -49,5 +45,6 @@ export const getUser = async () => {
         return response.data;
     } catch (error) {
         console.log('Get user error:', error);
+        return null;
     }
 }

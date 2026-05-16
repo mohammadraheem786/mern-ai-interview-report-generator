@@ -18,7 +18,6 @@ export const AuthProvider = ({ children }) => {
                 const userData = await getUser();
                 setUser(userData?.user || null);
             } catch (error) {
-                console.error("Failed to fetch user:", error);
                 setUser(null);
             } finally {
                 setLoading(false);

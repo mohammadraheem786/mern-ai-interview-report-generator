@@ -6,6 +6,8 @@ import Protected from "./features/auth/components/Protected.jsx";
 import AnalyzeInterview from "./features/ai/pages/AnalyzeInterview.jsx";
 import SingleReport from "./features/ai/pages/SingleReport.jsx";
 import ReportHistory from "./features/ai/pages/ReportHistory.jsx";
+import PublicOnly
+from "./features/auth/components/PublicOnly.jsx";
 
 // ─────────────────────────────
 // Layout with Navbar
@@ -23,13 +25,27 @@ export const router = createBrowserRouter([
     // Public Routes (no navbar)
     // ─────────────────────────────
     {
-        path: "/login",
-        element: <Login />
-    },
-    {
-        path: "/register",
-        element: <Register />
-    },
+  path: '/login',
+
+  element:
+
+    <PublicOnly>
+
+      <Login />
+
+    </PublicOnly>,
+},
+{
+  path: '/register',
+
+  element:
+
+    <PublicOnly>
+
+      <Register />
+
+    </PublicOnly>,
+},
 
     // ─────────────────────────────
     // Protected Routes (with navbar)

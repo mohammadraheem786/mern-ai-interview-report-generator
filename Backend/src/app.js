@@ -11,7 +11,7 @@ import cors from "cors";
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173',  // your Vite frontend URL
+  origin: process.env.FRONTEND_URL,  // your Vite frontend URL
   credentials: true,                // if using cookies/auth headers
 }));
 

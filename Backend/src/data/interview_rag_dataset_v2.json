@@ -1,0 +1,983 @@
+[
+  {
+    "id": "tq_react_001",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Frontend Developer",
+    "skill": "React",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["JavaScript", "Virtual DOM", "Reconciliation", "Frontend"],
+    "question": "Explain Virtual DOM in React.",
+    "expected_answer": "Virtual DOM is a lightweight in-memory representation of the real DOM. React uses it to batch and optimize DOM updates by comparing (diffing) the previous and new virtual DOM trees and applying only the necessary changes to the real DOM.",
+    "followup_questions": [
+      "How does React reconciliation work?",
+      "Difference between Virtual DOM and Real DOM?",
+      "Why is Virtual DOM faster than direct DOM manipulation?"
+    ],
+    "keywords": ["React", "Virtual DOM", "Reconciliation", "Frontend"],
+    "searchable_text": "React interview question about Virtual DOM and reconciliation for fresher frontend developer. How does Virtual DOM work? What is reconciliation in React?"
+  },
+  {
+    "id": "tq_react_002",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Frontend Developer",
+    "skill": "React",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 10,
+    "related_skills": ["JavaScript", "useState", "useEffect", "Functional Components"],
+    "question": "What are React Hooks and why were they introduced?",
+    "expected_answer": "Hooks are functions that let you use state and lifecycle features in functional components. They were introduced in React 16.8 to avoid class components and enable cleaner, reusable stateful logic.",
+    "followup_questions": [
+      "Difference between useEffect and componentDidMount?",
+      "What are the rules of hooks?",
+      "How does useCallback differ from useMemo?"
+    ],
+    "keywords": ["React", "Hooks", "useState", "useEffect", "Frontend"],
+    "searchable_text": "React Hooks interview question for fresher frontend developer. What are useState useEffect useCallback useMemo hooks? Why were React hooks introduced?"
+  },
+  {
+    "id": "tq_react_003",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Frontend Developer",
+    "skill": "React",
+    "difficulty": "hard",
+    "experience_level": "junior",
+    "importance_score": 8,
+    "related_skills": ["React.memo", "useMemo", "useCallback", "Code Splitting", "Lazy Loading"],
+    "question": "How does React handle performance optimization?",
+    "expected_answer": "React optimization techniques include React.memo to prevent unnecessary re-renders, useMemo to memoize expensive computations, useCallback to memoize functions, lazy loading with React.lazy and Suspense, and code splitting with dynamic imports.",
+    "followup_questions": [
+      "When would you use React.memo?",
+      "What is the difference between useMemo and useCallback?",
+      "How does code splitting improve performance?"
+    ],
+    "keywords": ["React", "Performance", "Optimization", "memo", "useMemo"],
+    "searchable_text": "React performance optimization interview question for junior frontend developer. How to optimize React app? React.memo useMemo useCallback code splitting lazy loading."
+  },
+  {
+    "id": "tq_react_004",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Frontend Developer",
+    "skill": "React",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["Redux", "State Management", "Context API", "Prop Drilling"],
+    "question": "What is the Context API and when should you use it over Redux?",
+    "expected_answer": "Context API is React's built-in state sharing mechanism for passing data through component tree without prop drilling. Use Context for simple global state like theme or auth. Use Redux for complex state with many actions, middleware needs, or time-travel debugging.",
+    "followup_questions": [
+      "What are the downsides of Context API?",
+      "How does Redux middleware work?",
+      "When would you choose Zustand over Redux?"
+    ],
+    "keywords": ["React", "Context API", "Redux", "State Management"],
+    "searchable_text": "React Context API vs Redux interview question for fresher frontend developer. When to use Context API? When to use Redux? What is prop drilling?"
+  },
+  {
+    "id": "tq_js_001",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Frontend Developer",
+    "skill": "JavaScript",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 10,
+    "related_skills": ["Async", "Promises", "setTimeout", "Call Stack", "Event Queue"],
+    "question": "Explain the event loop in JavaScript.",
+    "expected_answer": "JavaScript is single-threaded. The event loop manages the call stack and callback queue. When the call stack is empty, the event loop picks tasks from the callback queue (macrotasks like setTimeout) or microtask queue (Promises) and executes them.",
+    "followup_questions": [
+      "Difference between microtasks and macrotasks?",
+      "What is the difference between setTimeout(fn, 0) and Promise.resolve()?",
+      "How does async/await relate to the event loop?"
+    ],
+    "keywords": ["JavaScript", "Event Loop", "Async", "Promises"],
+    "searchable_text": "JavaScript event loop interview question for fresher frontend developer. How does the event loop work? What is call stack microtask macrotask queue in JavaScript?"
+  },
+  {
+    "id": "tq_js_002",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Frontend Developer",
+    "skill": "JavaScript",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["Scope", "Lexical Environment", "Module Pattern", "IIFE"],
+    "question": "What is closure in JavaScript?",
+    "expected_answer": "A closure is a function that retains access to its outer scope even after the outer function has returned. Closures are used for data encapsulation, factory functions, and memoization.",
+    "followup_questions": [
+      "Give a real-world use case of closure.",
+      "How does closure relate to module pattern?",
+      "What are memory leak risks with closures?"
+    ],
+    "keywords": ["JavaScript", "Closure", "Scope", "Frontend"],
+    "searchable_text": "JavaScript closure interview question for fresher frontend developer. What is closure? How does lexical scope work? Real-world use case of closure in JavaScript."
+  },
+  {
+    "id": "tq_js_003",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Frontend Developer",
+    "skill": "JavaScript",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["Prototype", "Inheritance", "ES6 Classes", "OOP"],
+    "question": "What is prototypal inheritance in JavaScript?",
+    "expected_answer": "Every JavaScript object has a prototype object from which it inherits methods and properties. When you access a property, JS looks up the prototype chain until it finds it or reaches null. ES6 classes are syntactic sugar over prototype-based inheritance.",
+    "followup_questions": [
+      "Difference between classical and prototypal inheritance?",
+      "What is the prototype chain?",
+      "How does Object.create() work?"
+    ],
+    "keywords": ["JavaScript", "Prototype", "Inheritance", "OOP"],
+    "searchable_text": "JavaScript prototypal inheritance interview question for fresher. What is prototype chain? How does inheritance work in JavaScript? Difference between classical and prototypal inheritance."
+  },
+  {
+    "id": "tq_node_001",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Backend Developer",
+    "skill": "Node.js",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["Event Loop", "libuv", "Non-blocking IO", "Concurrency"],
+    "question": "How does Node.js handle concurrency if it is single-threaded?",
+    "expected_answer": "Node.js uses an event-driven, non-blocking I/O model. It delegates I/O operations to the OS via libuv thread pool and gets notified via callbacks when they complete. This allows handling thousands of concurrent connections without blocking.",
+    "followup_questions": [
+      "What is the libuv thread pool size?",
+      "How do Worker Threads differ from the event loop?",
+      "When would you use the cluster module?"
+    ],
+    "keywords": ["Node.js", "Event Loop", "Concurrency", "Backend"],
+    "searchable_text": "Node.js concurrency interview question for fresher backend developer. How does Node.js handle multiple requests? What is non-blocking IO? How does libuv work in Node.js?"
+  },
+  {
+    "id": "tq_node_002",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Backend Developer",
+    "skill": "Node.js",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 10,
+    "related_skills": ["Express", "Request Pipeline", "Error Handling", "Authentication"],
+    "question": "What is middleware in Express.js?",
+    "expected_answer": "Middleware are functions that execute during the request-response cycle. They have access to req, res, and next. Used for logging, authentication, error handling, parsing request body, etc.",
+    "followup_questions": [
+      "Difference between app.use and router.use?",
+      "How does error-handling middleware differ from normal middleware?",
+      "What is the order of middleware execution?"
+    ],
+    "keywords": ["Node.js", "Express", "Middleware", "Backend"],
+    "searchable_text": "Express middleware interview question for fresher backend developer. What is middleware in Express.js? How does request pipeline work? How to write error handling middleware in Express?"
+  },
+  {
+    "id": "tq_jwt_001",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Backend Developer",
+    "skill": "JWT Authentication",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 10,
+    "related_skills": ["Authentication", "Cookies", "Sessions", "Security", "Authorization"],
+    "question": "How does JWT authentication work?",
+    "expected_answer": "JWT (JSON Web Token) has three parts: header, payload, signature. On login, server creates a signed token and sends it to client. Client stores it and sends it in Authorization header. Server verifies the signature on every request without hitting the database.",
+    "followup_questions": [
+      "Difference between JWT and session-based auth?",
+      "How do refresh tokens work?",
+      "What are JWT security vulnerabilities?"
+    ],
+    "keywords": ["JWT", "Authentication", "Security", "Backend"],
+    "searchable_text": "JWT authentication interview question for fresher backend developer. How does JSON Web Token work? What is the difference between JWT and session? How to implement authentication in Node.js?"
+  },
+  {
+    "id": "tq_jwt_002",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Backend Developer",
+    "skill": "JWT Authentication",
+    "difficulty": "hard",
+    "experience_level": "junior",
+    "importance_score": 8,
+    "related_skills": ["XSS", "CSRF", "HttpOnly Cookies", "Token Rotation", "Security"],
+    "question": "What are the security vulnerabilities in JWT and how do you prevent them?",
+    "expected_answer": "Common vulnerabilities: algorithm confusion (none algorithm attack), weak secrets, storing JWT in localStorage (XSS risk). Prevention: use strong secrets, always specify algorithm, use httpOnly cookies, implement token blacklisting, set short expiry.",
+    "followup_questions": [
+      "Why is storing JWT in localStorage risky?",
+      "What is the none algorithm attack?",
+      "How do you implement token rotation?"
+    ],
+    "keywords": ["JWT", "Security", "XSS", "Authentication", "Backend"],
+    "searchable_text": "JWT security vulnerabilities interview question for junior backend developer. What are JWT attack vectors? How to store JWT securely? What is XSS risk with localStorage and JWT?"
+  },
+  {
+    "id": "tq_mongodb_001",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Backend Developer",
+    "skill": "MongoDB",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["SQL", "NoSQL", "Database", "Schema Design", "ACID"],
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "expected_answer": "SQL databases are relational with fixed schema, ACID compliant, and use tables. NoSQL databases like MongoDB are flexible schema, horizontally scalable, and store data as documents, key-value, graphs, or columns. NoSQL is better for unstructured or rapidly changing data.",
+    "followup_questions": [
+      "When would you choose MongoDB over PostgreSQL?",
+      "What is CAP theorem?",
+      "How does MongoDB handle transactions?"
+    ],
+    "keywords": ["MongoDB", "SQL", "NoSQL", "Database", "Backend"],
+    "searchable_text": "SQL vs NoSQL database interview question for fresher backend developer. What is the difference between MongoDB and SQL? When to use NoSQL? What is CAP theorem?"
+  },
+  {
+    "id": "tq_mongodb_002",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Backend Developer",
+    "skill": "MongoDB",
+    "difficulty": "hard",
+    "experience_level": "junior",
+    "importance_score": 7,
+    "related_skills": ["Database Performance", "Query Optimization", "Aggregation Pipeline"],
+    "question": "How does MongoDB indexing work and why is it important?",
+    "expected_answer": "Indexes in MongoDB store a small portion of data in an easy-to-traverse form. Without indexes, MongoDB does a collection scan. Common types: single field, compound, text, geospatial, TTL indexes. Indexes speed up reads but slow down writes.",
+    "followup_questions": [
+      "What is the difference between compound and single index?",
+      "What is a TTL index?",
+      "How do you analyze query performance in MongoDB?"
+    ],
+    "keywords": ["MongoDB", "Indexing", "Performance", "Database"],
+    "searchable_text": "MongoDB indexing interview question for junior backend developer. How do MongoDB indexes work? What is compound index? How to optimize MongoDB query performance?"
+  },
+  {
+    "id": "tq_docker_001",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "DevOps Engineer",
+    "skill": "Docker",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["Containerization", "DevOps", "Deployment", "Docker Compose", "CI/CD"],
+    "question": "What is the difference between a Docker image and a container?",
+    "expected_answer": "A Docker image is a read-only blueprint containing the application code, dependencies, and configuration. A container is a running instance of an image. Multiple containers can run from the same image.",
+    "followup_questions": [
+      "What is the difference between CMD and ENTRYPOINT?",
+      "How does Docker layer caching work?",
+      "What is a multi-stage build?"
+    ],
+    "keywords": ["Docker", "Container", "DevOps", "Image"],
+    "searchable_text": "Docker interview question for fresher DevOps engineer. What is Docker image vs container? How does Dockerfile work? What is Docker layer caching and multi-stage build?"
+  },
+  {
+    "id": "tq_ml_001",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Machine Learning Engineer",
+    "skill": "Machine Learning",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 10,
+    "related_skills": ["Regularization", "Bias Variance Tradeoff", "Cross Validation", "Dropout"],
+    "question": "What is overfitting and how do you prevent it?",
+    "expected_answer": "Overfitting occurs when a model learns training data too well and fails to generalize to new data. Prevention: regularization (L1, L2), dropout, early stopping, cross-validation, more training data, data augmentation, simpler model.",
+    "followup_questions": [
+      "Difference between L1 and L2 regularization?",
+      "What is the bias-variance tradeoff?",
+      "When would you use dropout vs batch normalization?"
+    ],
+    "keywords": ["Machine Learning", "Overfitting", "Regularization", "ML"],
+    "searchable_text": "Overfitting interview question for fresher machine learning engineer. What is overfitting underfitting in ML? How to prevent overfitting? What is bias variance tradeoff regularization dropout?"
+  },
+  {
+    "id": "tq_ml_002",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Data Scientist",
+    "skill": "Machine Learning",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["Supervised Learning", "Unsupervised Learning", "Classification", "Clustering"],
+    "question": "Explain the difference between supervised, unsupervised, and reinforcement learning.",
+    "expected_answer": "Supervised learning uses labeled data to train models (classification, regression). Unsupervised learning finds patterns in unlabeled data (clustering, dimensionality reduction). Reinforcement learning trains an agent using rewards and penalties through environment interaction.",
+    "followup_questions": [
+      "Give examples of each type?",
+      "What is semi-supervised learning?",
+      "When would you use clustering over classification?"
+    ],
+    "keywords": ["Machine Learning", "Supervised", "Unsupervised", "Data Science"],
+    "searchable_text": "Types of machine learning interview question for fresher data scientist. What is supervised unsupervised reinforcement learning? Examples of classification clustering regression algorithms."
+  },
+  {
+    "id": "tq_system_design_001",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Full Stack Developer",
+    "skill": "System Design",
+    "difficulty": "hard",
+    "experience_level": "junior",
+    "importance_score": 7,
+    "related_skills": ["Scalability", "Load Balancing", "Caching", "Redis", "Database Design"],
+    "question": "How would you design a URL shortener like bit.ly?",
+    "expected_answer": "Key components: API to accept long URL and return short code, hash function (MD5/base62) to generate short code, database to store mappings, redirect service, cache layer (Redis) for popular URLs, rate limiting. Consider scalability with load balancer and CDN.",
+    "followup_questions": [
+      "How would you handle hash collisions?",
+      "How would you scale to millions of URLs?",
+      "How would you implement analytics for each URL?"
+    ],
+    "keywords": ["System Design", "Scalability", "Backend", "Full Stack"],
+    "searchable_text": "System design interview question for junior full stack developer. How to design URL shortener like bitly? What is hashing load balancing caching Redis in system design?"
+  },
+  {
+    "id": "tq_rest_001",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Backend Developer",
+    "skill": "REST APIs",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["HTTP", "API Design", "Status Codes", "CRUD", "Versioning"],
+    "question": "What are REST API best practices?",
+    "expected_answer": "Best practices: use nouns for endpoints not verbs, use HTTP methods correctly (GET/POST/PUT/DELETE), use proper status codes, implement pagination, version your API (v1/v2), use HTTPS, implement rate limiting, provide meaningful error messages.",
+    "followup_questions": [
+      "Difference between PUT and PATCH?",
+      "What is HATEOAS?",
+      "How do you handle API versioning?"
+    ],
+    "keywords": ["REST API", "Backend", "HTTP", "API Design"],
+    "searchable_text": "REST API best practices interview question for fresher backend developer. How to design REST API? What are correct HTTP methods and status codes? What is API versioning?"
+  },
+  {
+    "id": "tq_dsa_001",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Full Stack Developer",
+    "skill": "Data Structures",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["Algorithms", "Stack", "Queue", "Arrays", "Linked List"],
+    "question": "Explain the difference between a stack and a queue.",
+    "expected_answer": "Stack follows LIFO (Last In First Out) - like a stack of plates. Queue follows FIFO (First In First Out) - like a queue at a counter. Stack operations: push, pop, peek. Queue operations: enqueue, dequeue, front.",
+    "followup_questions": [
+      "How would you implement a stack using queues?",
+      "Give real-world examples of stack and queue?",
+      "What is a priority queue?"
+    ],
+    "keywords": ["DSA", "Stack", "Queue", "Data Structures"],
+    "searchable_text": "Stack vs queue data structure interview question for fresher developer. What is LIFO FIFO? How does stack and queue work? Real world examples of stack and queue."
+  },
+  {
+    "id": "tq_oops_001",
+    "category": "technical_question",
+    "chunk_type": "technical_question",
+    "role": "Backend Developer",
+    "skill": "OOP",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["Inheritance", "Polymorphism", "Encapsulation", "Abstraction", "Classes"],
+    "question": "Explain the four pillars of Object-Oriented Programming.",
+    "expected_answer": "Encapsulation: bundling data and methods, hiding internal state. Abstraction: exposing only essential features. Inheritance: child class inheriting properties from parent. Polymorphism: same interface, different implementations (method overriding/overloading).",
+    "followup_questions": [
+      "Difference between overloading and overriding?",
+      "What is the difference between abstract class and interface?",
+      "Give a real-world example of polymorphism?"
+    ],
+    "keywords": ["OOP", "Encapsulation", "Inheritance", "Polymorphism"],
+    "searchable_text": "OOP four pillars interview question for fresher developer. What is encapsulation abstraction inheritance polymorphism? Object oriented programming concepts with examples."
+  },
+
+  {
+    "id": "bq_001",
+    "category": "behavioral_question",
+    "chunk_type": "behavioral_question",
+    "type": "Leadership",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["Communication", "Team Management", "Decision Making"],
+    "question": "Tell me about a time you led a team or project.",
+    "star_guidance": {
+      "situation": "Describe the project context and team size.",
+      "task": "What was your responsibility as a leader?",
+      "action": "How did you coordinate, delegate, and motivate?",
+      "result": "What was the outcome? Mention metrics if possible."
+    },
+    "fresher_tip": "Use college projects, hackathons, or club leadership as examples.",
+    "keywords": ["Leadership", "Behavioral", "HR Round", "Team"],
+    "searchable_text": "Leadership behavioral interview question for fresher. Tell me about a time you led a project or team. STAR method leadership HR round answer."
+  },
+  {
+    "id": "bq_002",
+    "category": "behavioral_question",
+    "chunk_type": "behavioral_question",
+    "type": "Conflict Resolution",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["Communication", "Empathy", "Problem Solving"],
+    "question": "Tell me about a time you had a conflict with a teammate. How did you handle it?",
+    "star_guidance": {
+      "situation": "Briefly describe the disagreement.",
+      "task": "What needed to be resolved?",
+      "action": "How did you communicate and find common ground?",
+      "result": "How did it improve team dynamics?"
+    },
+    "fresher_tip": "Show maturity and communication skills. Avoid blaming others.",
+    "keywords": ["Conflict", "Behavioral", "Communication", "HR Round"],
+    "searchable_text": "Conflict resolution behavioral interview question for fresher. How do you handle disagreements with teammates? STAR method conflict resolution HR round."
+  },
+  {
+    "id": "bq_003",
+    "category": "behavioral_question",
+    "chunk_type": "behavioral_question",
+    "type": "Failure",
+    "difficulty": "hard",
+    "experience_level": "fresher",
+    "importance_score": 7,
+    "related_skills": ["Self Awareness", "Growth Mindset", "Accountability"],
+    "question": "Tell me about a time you failed. What did you learn?",
+    "star_guidance": {
+      "situation": "Describe the failure context honestly.",
+      "task": "What were you trying to achieve?",
+      "action": "What went wrong and what did you do to recover?",
+      "result": "What was the lesson learned and how did you apply it?"
+    },
+    "fresher_tip": "Interviewers want to see self-awareness and growth mindset, not perfection.",
+    "keywords": ["Failure", "Growth Mindset", "Behavioral", "HR Round"],
+    "searchable_text": "Failure behavioral interview question for fresher. Tell me about a time you failed. STAR method failure growth mindset HR round answer."
+  },
+  {
+    "id": "bq_004",
+    "category": "behavioral_question",
+    "chunk_type": "behavioral_question",
+    "type": "Deadline Pressure",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 7,
+    "related_skills": ["Time Management", "Prioritization", "Stress Handling"],
+    "question": "Describe a situation where you had to meet a tight deadline.",
+    "star_guidance": {
+      "situation": "What was the deadline and project?",
+      "task": "What was your specific responsibility?",
+      "action": "How did you prioritize and manage your time?",
+      "result": "Did you meet the deadline? What was the impact?"
+    },
+    "fresher_tip": "Use hackathons or college submission deadlines as examples.",
+    "keywords": ["Deadline", "Time Management", "Behavioral", "Pressure"],
+    "searchable_text": "Deadline pressure behavioral interview question for fresher. How do you handle tight deadlines? Time management STAR method HR round answer."
+  },
+  {
+    "id": "bq_005",
+    "category": "behavioral_question",
+    "chunk_type": "behavioral_question",
+    "type": "Adaptability",
+    "difficulty": "medium",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["Learning Agility", "Flexibility", "Curiosity"],
+    "question": "Tell me about a time you had to quickly learn a new technology or skill.",
+    "star_guidance": {
+      "situation": "What was the new skill or technology required?",
+      "task": "Why did you need to learn it quickly?",
+      "action": "How did you approach learning it?",
+      "result": "How did it help the project or team?"
+    },
+    "fresher_tip": "Show learning agility. This is a highly valued fresher trait.",
+    "keywords": ["Learning", "Adaptability", "Behavioral", "Growth"],
+    "searchable_text": "Adaptability behavioral interview question for fresher. Tell me about a time you learned a new technology quickly. Learning agility STAR method HR round."
+  },
+  {
+    "id": "bq_006",
+    "category": "behavioral_question",
+    "chunk_type": "behavioral_question",
+    "type": "Teamwork",
+    "difficulty": "easy",
+    "experience_level": "fresher",
+    "importance_score": 7,
+    "related_skills": ["Collaboration", "Communication", "Empathy"],
+    "question": "Tell me about a time you worked effectively in a team.",
+    "star_guidance": {
+      "situation": "Describe the team and project.",
+      "task": "What was your role in the team?",
+      "action": "How did you collaborate and contribute?",
+      "result": "What did the team achieve together?"
+    },
+    "fresher_tip": "Highlight collaboration tools used like Git, Jira, Slack.",
+    "keywords": ["Teamwork", "Collaboration", "Behavioral", "HR Round"],
+    "searchable_text": "Teamwork behavioral interview question for fresher. Tell me about working in a team. Collaboration STAR method HR round answer for fresher."
+  },
+
+  {
+    "id": "rr_001",
+    "category": "resume_review",
+    "chunk_type": "resume_review",
+    "resume_claim": "Built authentication system",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["JWT", "bcrypt", "Sessions", "OAuth", "Security"],
+    "likely_interviewer_questions": [
+      "JWT vs session-based authentication?",
+      "How do refresh tokens work?",
+      "How did you store passwords securely?",
+      "What security vulnerabilities did you consider?"
+    ],
+    "weak_signals": [
+      "No mention of token expiry strategy",
+      "No mention of bcrypt or password hashing",
+      "No mention of OAuth or social login"
+    ],
+    "preparation_advice": "Be ready to explain the full auth flow: registration → hashing → login → JWT → refresh → logout → blacklisting.",
+    "keywords": ["Authentication", "JWT", "Resume Review", "Security"],
+    "searchable_text": "Resume review for authentication system project. What questions will interviewer ask about authentication? JWT bcrypt password hashing refresh token security."
+  },
+  {
+    "id": "rr_002",
+    "category": "resume_review",
+    "chunk_type": "resume_review",
+    "resume_claim": "Built REST API using Node.js and Express",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["API Design", "Validation", "Rate Limiting", "Error Handling", "Testing"],
+    "likely_interviewer_questions": [
+      "How did you handle API versioning?",
+      "How did you implement error handling middleware?",
+      "How did you secure your API endpoints?",
+      "How did you test your APIs?"
+    ],
+    "weak_signals": [
+      "No mention of rate limiting",
+      "No mention of input validation",
+      "No mention of API documentation like Swagger"
+    ],
+    "preparation_advice": "Explain your API design choices. Mention tools like Postman for testing, Joi for validation, and rate-limiter-flexible for rate limiting.",
+    "keywords": ["REST API", "Node.js", "Express", "Resume Review"],
+    "searchable_text": "Resume review for REST API Node.js Express project. What questions will interviewer ask about REST API? API design error handling validation rate limiting."
+  },
+  {
+    "id": "rr_003",
+    "category": "resume_review",
+    "chunk_type": "resume_review",
+    "resume_claim": "Developed machine learning model",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["Model Evaluation", "Cross Validation", "Metrics", "Deployment", "Preprocessing"],
+    "likely_interviewer_questions": [
+      "What model did you use and why?",
+      "How did you evaluate model performance?",
+      "How did you handle imbalanced dataset?",
+      "Did you deploy the model?"
+    ],
+    "weak_signals": [
+      "No mention of evaluation metrics like F1, ROC-AUC",
+      "No mention of cross-validation",
+      "No mention of model deployment"
+    ],
+    "preparation_advice": "Always mention: dataset size, preprocessing steps, model chosen, evaluation metrics, and any deployment or API serving.",
+    "keywords": ["Machine Learning", "Model", "Resume Review", "Data Science"],
+    "searchable_text": "Resume review for machine learning model project. What questions will interviewer ask about ML project? Model evaluation metrics F1 ROC-AUC cross validation deployment."
+  },
+  {
+    "id": "rr_004",
+    "category": "resume_review",
+    "chunk_type": "resume_review",
+    "resume_claim": "Used Docker for deployment",
+    "experience_level": "fresher",
+    "importance_score": 7,
+    "related_skills": ["Docker Compose", "CI/CD", "Container Registry", "Environment Variables"],
+    "likely_interviewer_questions": [
+      "What is the difference between image and container?",
+      "How did you write your Dockerfile?",
+      "Did you use Docker Compose?",
+      "How did you handle environment variables in Docker?"
+    ],
+    "weak_signals": [
+      "No mention of Docker Compose for multi-container setup",
+      "No mention of CI/CD integration",
+      "No mention of container registry"
+    ],
+    "preparation_advice": "Be ready to explain your Dockerfile line by line. Mention multi-stage builds if used. Explain why Docker was needed in your project.",
+    "keywords": ["Docker", "DevOps", "Resume Review", "Deployment"],
+    "searchable_text": "Resume review for Docker deployment project. What questions will interviewer ask about Docker? Dockerfile Docker Compose container registry CI/CD."
+  },
+  {
+    "id": "rr_005",
+    "category": "resume_review",
+    "chunk_type": "resume_review",
+    "resume_claim": "Built full stack MERN application",
+    "experience_level": "fresher",
+    "importance_score": 10,
+    "related_skills": ["React", "Node.js", "MongoDB", "Express", "Deployment", "State Management"],
+    "likely_interviewer_questions": [
+      "How did your frontend communicate with backend?",
+      "How did you manage state in React?",
+      "How did you handle authentication across frontend and backend?",
+      "How did you deploy the application?"
+    ],
+    "weak_signals": [
+      "No mention of deployment platform",
+      "No mention of state management solution",
+      "No mention of environment configuration"
+    ],
+    "preparation_advice": "Have a clear explanation of your full project architecture ready. Draw a mental diagram: React → Axios → Express → MongoDB. Explain each layer's responsibility.",
+    "keywords": ["MERN", "Full Stack", "Resume Review", "React", "Node.js"],
+    "searchable_text": "Resume review for MERN stack full stack project. What questions will interviewer ask about MERN project? React Node.js MongoDB Express state management deployment architecture."
+  },
+
+  {
+    "id": "cp_001",
+    "category": "company_interview_pattern",
+    "chunk_type": "company_pattern",
+    "company": "Amazon",
+    "role": "SDE-1",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["DSA", "System Design", "Leadership Principles", "OOP", "Behavioral"],
+    "interview_rounds": ["Online Assessment", "Technical Round 1", "Technical Round 2", "Bar Raiser"],
+    "focus_areas": ["DSA", "System Design basics", "Leadership Principles", "OOP"],
+    "common_question_patterns": [
+      "Array and string problems",
+      "Tree and graph traversals",
+      "Behavioral using Leadership Principles",
+      "Low-level design"
+    ],
+    "preparation_tip": "Every behavioral answer must map to an Amazon Leadership Principle. Use STAR format strictly.",
+    "keywords": ["Amazon", "SDE", "DSA", "Leadership Principles", "Company Pattern"],
+    "searchable_text": "Amazon SDE-1 interview pattern for fresher. Amazon interview rounds focus areas. Amazon leadership principles behavioral questions DSA system design preparation."
+  },
+  {
+    "id": "cp_002",
+    "category": "company_interview_pattern",
+    "chunk_type": "company_pattern",
+    "company": "Google",
+    "role": "Software Engineer L3",
+    "experience_level": "junior",
+    "importance_score": 8,
+    "related_skills": ["DSA", "System Design", "Code Quality", "Problem Solving", "Algorithms"],
+    "interview_rounds": ["Phone Screen", "Technical x4", "Googleyness"],
+    "focus_areas": ["DSA", "System Design", "Code Quality", "Problem Solving"],
+    "common_question_patterns": [
+      "Graph and DP problems",
+      "Scalable system design",
+      "Clean code and optimization",
+      "Behavioral Googleyness"
+    ],
+    "preparation_tip": "Google focuses heavily on optimal solutions. Always discuss time and space complexity. Practice Leetcode Hard.",
+    "keywords": ["Google", "SDE", "DSA", "System Design", "Company Pattern"],
+    "searchable_text": "Google Software Engineer L3 interview pattern. Google interview rounds focus areas. Google DSA system design Googleyness behavioral questions preparation."
+  },
+  {
+    "id": "cp_003",
+    "category": "company_interview_pattern",
+    "chunk_type": "company_pattern",
+    "company": "TCS",
+    "role": "Ninja / Digital",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["OOP", "SQL", "Basic DSA", "Aptitude", "Communication"],
+    "interview_rounds": ["Online Test", "Technical Interview", "HR Round"],
+    "focus_areas": ["OOP concepts", "SQL", "Basic DSA", "Aptitude"],
+    "common_question_patterns": [
+      "OOP principles with examples",
+      "SQL joins and queries",
+      "Basic sorting and searching",
+      "Puzzle and aptitude questions"
+    ],
+    "preparation_tip": "Focus on OOP, SQL, and basic programming. For Ninja role, practice competitive coding basics. HR round focuses on communication and flexibility.",
+    "keywords": ["TCS", "Ninja", "OOP", "SQL", "Company Pattern", "Fresher"],
+    "searchable_text": "TCS Ninja Digital interview pattern for fresher. TCS interview rounds focus areas. TCS OOP SQL aptitude technical HR round preparation tips."
+  },
+  {
+    "id": "cp_004",
+    "category": "company_interview_pattern",
+    "chunk_type": "company_pattern",
+    "company": "Infosys",
+    "role": "Systems Engineer",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["OOP", "DBMS", "Communication", "Aptitude", "Basic Programming"],
+    "interview_rounds": ["Hackathon / Online Test", "Technical Interview", "HR Round"],
+    "focus_areas": ["Programming basics", "OOP", "DBMS", "Verbal communication"],
+    "common_question_patterns": [
+      "Write code in any language",
+      "OOP real-world examples",
+      "Database normalization",
+      "Why Infosys? Career goals?"
+    ],
+    "preparation_tip": "Infosys values communication and attitude. Be clear, confident, and show willingness to learn.",
+    "keywords": ["Infosys", "Fresher", "OOP", "DBMS", "Company Pattern"],
+    "searchable_text": "Infosys Systems Engineer interview pattern for fresher. Infosys interview rounds focus areas. Infosys OOP DBMS communication technical HR round preparation."
+  },
+  {
+    "id": "cp_005",
+    "category": "company_interview_pattern",
+    "chunk_type": "company_pattern",
+    "company": "Startup",
+    "role": "Full Stack Developer",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["Full Stack", "React", "Node.js", "Problem Solving", "Product Thinking"],
+    "interview_rounds": ["Technical Assignment", "Technical Discussion", "Culture Fit"],
+    "focus_areas": ["Real project experience", "Problem solving speed", "Full stack depth", "Initiative"],
+    "common_question_patterns": [
+      "Build a mini feature live",
+      "Discuss past projects in depth",
+      "How would you approach X problem?",
+      "What do you know about our product?"
+    ],
+    "preparation_tip": "Startups care about what you can build fast. Have personal projects live and deployed. Show initiative and product thinking.",
+    "keywords": ["Startup", "Full Stack", "MERN", "Company Pattern", "Projects"],
+    "searchable_text": "Startup full stack developer interview pattern for fresher. Startup interview rounds focus areas. Startup technical assignment culture fit MERN project discussion preparation."
+  },
+
+  {
+    "id": "sg_001",
+    "category": "skill_gap_rule",
+    "chunk_type": "skill_gap",
+    "role": "Backend Developer",
+    "missing_skill": "Docker",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["DevOps", "CI/CD", "Kubernetes", "Deployment", "Containerization"],
+    "impact": "Candidate may not match deployment and DevOps expectations in modern teams.",
+    "recommended_learning_topics": [
+      "Docker basics and architecture",
+      "Writing Dockerfile",
+      "Docker Compose for multi-service apps",
+      "Container networking",
+      "Pushing to Docker Hub"
+    ],
+    "estimated_learning_time": "1 week",
+    "free_resources": ["Docker official docs", "TechWorld with Nana YouTube", "Play with Docker"],
+    "keywords": ["Docker", "DevOps", "Skill Gap", "Backend"],
+    "searchable_text": "Skill gap Docker for backend developer fresher. Missing Docker skill impact on job application. Docker learning plan Dockerfile Docker Compose containerization."
+  },
+  {
+    "id": "sg_002",
+    "category": "skill_gap_rule",
+    "chunk_type": "skill_gap",
+    "role": "Frontend Developer",
+    "missing_skill": "TypeScript",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["JavaScript", "React", "Type Safety", "Interfaces", "Generics"],
+    "impact": "Most mid to senior frontend roles now require TypeScript. May limit opportunities.",
+    "recommended_learning_topics": [
+      "TypeScript basics: types, interfaces, enums",
+      "TypeScript with React props typing and hooks typing",
+      "Generics in TypeScript",
+      "TypeScript configuration with tsconfig"
+    ],
+    "estimated_learning_time": "1-2 weeks",
+    "free_resources": ["TypeScript official handbook", "Matt Pocock YouTube", "Total TypeScript"],
+    "keywords": ["TypeScript", "Frontend", "Skill Gap", "React"],
+    "searchable_text": "Skill gap TypeScript for frontend developer fresher. Missing TypeScript skill impact. TypeScript learning plan types interfaces generics React TypeScript."
+  },
+  {
+    "id": "sg_003",
+    "category": "skill_gap_rule",
+    "chunk_type": "skill_gap",
+    "role": "Full Stack Developer",
+    "missing_skill": "System Design",
+    "experience_level": "junior",
+    "importance_score": 8,
+    "related_skills": ["Scalability", "Load Balancing", "Caching", "Microservices", "Database Design"],
+    "impact": "Without system design knowledge, candidate cannot clear mid to senior level rounds.",
+    "recommended_learning_topics": [
+      "Load balancing",
+      "Database sharding and replication",
+      "Caching strategies with Redis",
+      "Message queues Kafka RabbitMQ",
+      "CAP theorem",
+      "Microservices vs Monolith"
+    ],
+    "estimated_learning_time": "3-4 weeks",
+    "free_resources": ["System Design Primer GitHub", "ByteByteGo YouTube", "Grokking System Design"],
+    "keywords": ["System Design", "Scalability", "Skill Gap", "Backend"],
+    "searchable_text": "Skill gap system design for full stack developer junior. Missing system design knowledge impact. System design learning plan load balancing caching microservices scalability."
+  },
+  {
+    "id": "sg_004",
+    "category": "skill_gap_rule",
+    "chunk_type": "skill_gap",
+    "role": "Data Scientist",
+    "missing_skill": "SQL",
+    "experience_level": "fresher",
+    "importance_score": 10,
+    "related_skills": ["Database", "Data Analysis", "Query Optimization", "Joins", "Window Functions"],
+    "impact": "SQL is essential for data roles. Without it, candidate fails most data science screening rounds.",
+    "recommended_learning_topics": [
+      "Basic SELECT WHERE GROUP BY",
+      "JOINs: INNER LEFT RIGHT FULL",
+      "Window functions ROW_NUMBER RANK LAG LEAD",
+      "Subqueries and CTEs",
+      "Query optimization"
+    ],
+    "estimated_learning_time": "1-2 weeks",
+    "free_resources": ["SQLZoo", "Mode Analytics SQL Tutorial", "LeetCode SQL problems"],
+    "keywords": ["SQL", "Data Science", "Skill Gap", "Database"],
+    "searchable_text": "Skill gap SQL for data scientist fresher. Missing SQL knowledge impact on data science jobs. SQL learning plan joins window functions subqueries CTEs."
+  },
+  {
+    "id": "sg_005",
+    "category": "skill_gap_rule",
+    "chunk_type": "skill_gap",
+    "role": "Machine Learning Engineer",
+    "missing_skill": "MLOps",
+    "experience_level": "junior",
+    "importance_score": 7,
+    "related_skills": ["Model Deployment", "MLflow", "Docker", "CI/CD", "Feature Stores"],
+    "impact": "Without MLOps skills, ML engineer cannot deploy or maintain models in production.",
+    "recommended_learning_topics": [
+      "Model serving with FastAPI or Flask",
+      "MLflow for experiment tracking",
+      "Docker for ML environments",
+      "CI/CD for ML pipelines",
+      "Feature stores and data versioning"
+    ],
+    "estimated_learning_time": "2-3 weeks",
+    "free_resources": ["MLOps community", "Made With ML", "Weights and Biases tutorials"],
+    "keywords": ["MLOps", "Machine Learning", "Deployment", "Skill Gap"],
+    "searchable_text": "Skill gap MLOps for machine learning engineer junior. Missing MLOps knowledge impact. MLOps learning plan model serving MLflow Docker CI/CD feature stores."
+  },
+  {
+    "id": "sg_006",
+    "category": "skill_gap_rule",
+    "chunk_type": "skill_gap",
+    "role": "Frontend Developer",
+    "missing_skill": "Testing",
+    "experience_level": "fresher",
+    "importance_score": 7,
+    "related_skills": ["Jest", "React Testing Library", "Unit Testing", "Integration Testing", "TDD"],
+    "impact": "Companies increasingly require testing knowledge even at fresher level.",
+    "recommended_learning_topics": [
+      "Unit testing with Jest",
+      "React Testing Library basics",
+      "Mocking API calls in tests",
+      "Test-driven development basics"
+    ],
+    "estimated_learning_time": "1 week",
+    "free_resources": ["Jest official docs", "React Testing Library docs", "Kent C. Dodds blog"],
+    "keywords": ["Testing", "Jest", "Frontend", "Skill Gap"],
+    "searchable_text": "Skill gap testing for frontend developer fresher. Missing Jest React Testing Library knowledge. Frontend testing learning plan unit testing integration testing TDD."
+  },
+
+  {
+    "id": "re_001",
+    "category": "role_expectation",
+    "chunk_type": "role_expectation",
+    "role": "Frontend Developer",
+    "level": "fresher",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["React", "JavaScript", "CSS", "HTML", "Git"],
+    "core_skills_expected": ["HTML", "CSS", "JavaScript", "React", "Git"],
+    "good_to_have": ["TypeScript", "Redux", "Testing with Jest", "Webpack", "Figma basics"],
+    "advanced_topics": ["Performance optimization", "Accessibility", "SSR with Next.js", "Code splitting"],
+    "interview_focus": ["React fundamentals", "JavaScript basics", "CSS layout Flexbox Grid", "Project walkthrough"],
+    "red_flags_for_interviewer": [
+      "Cannot explain projects built on resume",
+      "No knowledge of how React state works",
+      "Never used Git or version control"
+    ],
+    "keywords": ["Frontend", "React", "Role Expectation", "Fresher"],
+    "searchable_text": "Frontend developer role expectations for fresher. What skills does fresher frontend developer need? React JavaScript HTML CSS Git skills expected interview focus areas red flags."
+  },
+  {
+    "id": "re_002",
+    "category": "role_expectation",
+    "chunk_type": "role_expectation",
+    "role": "Backend Developer",
+    "level": "fresher",
+    "experience_level": "fresher",
+    "importance_score": 9,
+    "related_skills": ["Node.js", "Express", "MongoDB", "REST APIs", "Git"],
+    "core_skills_expected": ["Node.js", "Express", "MongoDB or SQL", "REST APIs", "Git"],
+    "good_to_have": ["JWT", "Redis", "Docker", "Testing", "TypeScript"],
+    "advanced_topics": ["Microservices", "Message queues", "System design", "Database optimization"],
+    "interview_focus": ["API design", "Database queries", "Authentication concepts", "Project depth"],
+    "red_flags_for_interviewer": [
+      "Cannot explain their own API design choices",
+      "No idea how authentication works",
+      "Never worked with databases directly"
+    ],
+    "keywords": ["Backend", "Node.js", "Role Expectation", "Fresher"],
+    "searchable_text": "Backend developer role expectations for fresher. What skills does fresher backend developer need? Node.js Express MongoDB REST API JWT skills expected interview focus areas red flags."
+  },
+  {
+    "id": "re_003",
+    "category": "role_expectation",
+    "chunk_type": "role_expectation",
+    "role": "Data Scientist",
+    "level": "fresher",
+    "experience_level": "fresher",
+    "importance_score": 8,
+    "related_skills": ["Python", "Pandas", "NumPy", "Scikit-learn", "SQL", "Statistics"],
+    "core_skills_expected": ["Python", "Pandas", "NumPy", "Scikit-learn", "SQL", "Statistics"],
+    "good_to_have": ["TensorFlow", "PyTorch", "Tableau", "Spark", "Feature Engineering"],
+    "advanced_topics": ["Deep learning", "NLP", "Computer vision", "MLOps", "A/B testing"],
+    "interview_focus": ["ML algorithms", "Statistics", "SQL queries", "Project explanation"],
+    "red_flags_for_interviewer": [
+      "Cannot explain model evaluation metrics",
+      "No hands-on project with real dataset",
+      "Weak statistics knowledge"
+    ],
+    "keywords": ["Data Science", "Python", "ML", "Role Expectation", "Fresher"],
+    "searchable_text": "Data scientist role expectations for fresher. What skills does fresher data scientist need? Python Pandas NumPy Scikit-learn SQL statistics ML skills expected interview focus red flags."
+  },
+  {
+    "id": "re_004",
+    "category": "role_expectation",
+    "chunk_type": "role_expectation",
+    "role": "Full Stack Developer",
+    "level": "junior",
+    "experience_level": "junior",
+    "importance_score": 9,
+    "related_skills": ["React", "Node.js", "MongoDB", "Express", "REST APIs", "Git"],
+    "core_skills_expected": ["React", "Node.js", "MongoDB", "Express", "REST APIs", "Git"],
+    "good_to_have": ["TypeScript", "Docker", "Redis", "Testing", "CI/CD"],
+    "advanced_topics": ["System design", "Performance optimization", "Microservices", "Cloud deployment"],
+    "interview_focus": ["End-to-end project walkthrough", "State management", "Auth implementation", "Deployment process"],
+    "red_flags_for_interviewer": [
+      "Frontend and backend not connected in projects",
+      "No deployed project",
+      "Cannot explain database schema choices"
+    ],
+    "keywords": ["Full Stack", "MERN", "Role Expectation", "Junior"],
+    "searchable_text": "Full stack developer role expectations for junior. What skills does junior MERN developer need? React Node.js MongoDB Express TypeScript Docker skills expected interview focus red flags."
+  },
+  {
+    "id": "re_005",
+    "category": "role_expectation",
+    "chunk_type": "role_expectation",
+    "role": "DevOps Engineer",
+    "level": "fresher",
+    "experience_level": "fresher",
+    "importance_score": 7,
+    "related_skills": ["Docker", "Linux", "CI/CD", "Git", "Cloud", "Scripting"],
+    "core_skills_expected": ["Docker", "Linux basics", "Git", "CI/CD basics", "Shell scripting"],
+    "good_to_have": ["Kubernetes", "AWS", "Terraform", "Jenkins", "Monitoring tools"],
+    "advanced_topics": ["Kubernetes orchestration", "Infrastructure as Code", "Cloud architecture", "Security"],
+    "interview_focus": ["Docker fundamentals", "Linux commands", "CI/CD pipeline", "Scripting"],
+    "red_flags_for_interviewer": [
+      "No hands-on experience with Docker",
+      "Cannot write basic shell scripts",
+      "No understanding of CI/CD pipeline"
+    ],
+    "keywords": ["DevOps", "Docker", "CI/CD", "Role Expectation", "Fresher"],
+    "searchable_text": "DevOps engineer role expectations for fresher. What skills does fresher DevOps engineer need? Docker Linux CI/CD Git scripting cloud skills expected interview focus red flags."
+  }
+]

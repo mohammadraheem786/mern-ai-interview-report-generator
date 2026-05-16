@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Environment Variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Build Files
+dist/
+build/
+
+# Coverage
+coverage/
+
+# Temporary Files
+.tmp/
+temp/
+
+# IDE Files
+.vscode/
+.idea/
+
+# ChromaDB Persistent Storage
+chroma/
+
+# Optional Uploads Folder
+uploads/

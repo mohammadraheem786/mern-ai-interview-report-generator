@@ -1,0 +1,124 @@
+@use 'sass:color';
+
+$bg: #0f1117;
+$card: #1a1d27;
+$border: #2a2d3e;
+$accent: #6c63ff;
+$text: #e8e8f0;
+$muted: #7a7a9a;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $bg;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.auth-card {
+  background: $card;
+  border: 1px solid $border;
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  animation: fadeUp 0.4s ease;
+}
+
+.auth-header {
+  margin-bottom: 2rem;
+  text-align: center;
+
+  h1 {
+    font-size: 1.8rem;
+    color: $text;
+    font-weight: 700;
+  }
+
+  p {
+    color: $muted;
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  label {
+    color: $muted;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  input {
+    background: $bg;
+    border: 1px solid $border;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: $text;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &::placeholder { color: color.adjust($muted, $lightness: -10%); }
+
+    &:focus { border-color: $accent; }
+  }
+}
+
+.btn-primary {
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  background: $accent;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+
+  &:hover { opacity: 0.88; }
+  &:active { transform: scale(0.98); }
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: $muted;
+  font-size: 0.88rem;
+
+  a {
+    color: $accent;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+.loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $bg;
+  color: $text;
+  font-size: 1.2rem;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

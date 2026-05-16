@@ -1,7 +1,12 @@
 import axios from "axios";
 
+// Look for Vercel's environment variable first; fall back to localhost if it's missing
+const BASE_URL = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL}/api` 
+  : "http://localhost:5000/api"; 
+
 const API = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: BASE_URL,
     withCredentials: true,
 });
 

@@ -75,21 +75,65 @@ async function loginUser(req, res) {
 }
 
 async function logoutUser(req, res) {
+
     try {
-        const token = req.cookies.token;  // ✅ was req.cookies.token.token (double .token bug)
+
+        const token =
+            req.cookies.token;
 
         if (token) {
-            const blacklistedToken = new blackListTokenModel({ token });
+
+            const blacklistedToken =
+                new blackListTokenModel({
+
+                    token
+
+                });
+
             await blacklistedToken.save();
+
         }
 
-        res.clearCookie("token");
-        res.status(200).json({ message: "User logged out successfully" });
-    } catch (error) {
-        res.status(500).json({ message: "Error logging out user", error: error.message });
-    }
-}
+        // Clear Cookie Properly
 
+        res.clearCookie(
+
+            "token",
+
+            {
+
+                httpOnly: true,
+
+                secure: true,
+
+                sameSite: "none"
+
+            }
+
+        );
+
+        return res.status(200).json({
+
+            message:
+                "User logged out successfully"
+
+        });
+
+    } catch (error) {
+
+        return res.status(500).json({
+
+            message:
+                "Error logging out user",
+
+            error:
+                error.message
+
+        });
+
+    }
+
+}
 async function getUserProfile(req, res) {
     try {
         const user = await userModel.findOne({ email: req.user.email }).select("-password");

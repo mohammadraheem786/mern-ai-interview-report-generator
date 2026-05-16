@@ -1,25 +1,16 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
-
-// Look for Vercel's environment variable first; fall back to localhost if it's missing
-const BASE_URL = import.meta.env.VITE_API_URL 
-  ? `${import.meta.env.VITE_API_URL}/api` 
-  : "http://localhost:5000/api"; 
-
-// const API = axios.create({
-//     baseURL: BASE_URL,
-//     withCredentials: true,
-// });
+import { logout } from "../features/auth/services/auth.api";
+import { useAuth } from "../features/auth/hooks/useAuth";
 
 const Navbar = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const { setUser } = useAuth();
 
     const handleLogout = async () => {
         try {
-            await axios.get(`${BASE_URL}/auth/logout`, {
-                withCredentials: true
-            });
+            await logout();
+            setUser(null); // ← clear user from context
             navigate("/login");
         } catch (error) {
             console.error("Logout failed:", error);
@@ -35,26 +26,15 @@ const Navbar = () => {
         <nav className="bg-slate-900 border-b border-slate-800 px-6 py-4">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
 
-                {/* Logo */}
-                <Link
-                    to="/"
-                    className="text-xl font-extrabold text-white tracking-tight"
-                >
+                <Link to="/" className="text-xl font-extrabold text-white tracking-tight">
                     Interview<span className="text-indigo-400">AI</span>
                 </Link>
 
-                {/* Links */}
                 <div className="flex items-center gap-6">
-                    <Link
-                        to="/"
-                        className={`transition text-sm font-medium ${isActive("/")}`}
-                    >
+                    <Link to="/" className={`transition text-sm font-medium ${isActive("/")}`}>
                         Analyze
                     </Link>
-                    <Link
-                        to="/history"
-                        className={`transition text-sm font-medium ${isActive("/history")}`}
-                    >
+                    <Link to="/history" className={`transition text-sm font-medium ${isActive("/history")}`}>
                         History
                     </Link>
                     <button

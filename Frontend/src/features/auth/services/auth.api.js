@@ -9,9 +9,7 @@ const API_URL = `${BASE_URL}/auth/`;
 export const register = async (username, email, password) => {
     try {
         const response = await axios.post(`${API_URL}register`, {
-            username,
-            email,
-            password
+            username, email, password
         });
         localStorage.setItem("token", response.data.token);
         return response.data;
@@ -22,10 +20,8 @@ export const register = async (username, email, password) => {
 
 export const login = async (email, password) => {
     try {
-        console.log('Attempting login with:', { email, password });
         const response = await axios.post(`${API_URL}login`, {
-            email,
-            password
+            email, password
         });
         localStorage.setItem("token", response.data.token);
         return response.data;
@@ -46,6 +42,7 @@ export const logout = async () => {
 export const getUser = async () => {
     try {
         const token = localStorage.getItem("token");
+        if (!token) return null;
         const response = await axios.get(`${API_URL}profile`, {
             headers: { Authorization: `Bearer ${token}` }
         });

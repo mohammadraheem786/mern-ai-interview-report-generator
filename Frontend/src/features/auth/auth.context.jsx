@@ -1,30 +1,53 @@
-import { createContext, useState, useEffect } from "react";
-import { getUser } from "./services/auth.api";
+import axios from 'axios';
 
-export const AuthContext = createContext();
+const BASE_URL = import.meta.env.VITE_API_URL
+    ? `${import.meta.env.VITE_API_URL}/api`
+    : "http://localhost:5000/api";
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+const API_URL = `${BASE_URL}/auth/`;
 
- useEffect(() => {
-  const fetchUser = async () => {
+export const register = async (username, email, password) => {
     try {
-      const userData = await getUser();
-      setUser(userData.user);
+        const response = await axios.post(`${API_URL}register`, {
+            username, email, password
+        });
+        localStorage.setItem("token", response.data.token);
+        return response.data;
     } catch (error) {
-      console.error("Failed to fetch user:", error);
-    } finally {
-      setLoading(false);
+        console.log('Registration error:', error);
     }
-  };         // ← closes fetchUser
+}
 
-  fetchUser();  // ← actually call it!
+export const login = async (email, password) => {
+    try {
+        const response = await axios.post(`${API_URL}login`, {
+            email, password
+        });
+        localStorage.setItem("token", response.data.token);
+        return response.data;
+    } catch (error) {
+        console.log('Login error:', error);
+    }
+}
 
-}, []); 
-  return (
-    <AuthContext.Provider value={{ user, setUser, loading, setLoading }}>
-      {children}
-    </AuthContext.Provider>
-  );
-};
+export const logout = async () => {
+    try {
+        localStorage.removeItem("token");
+        return { message: "Logged out successfully" };
+    } catch (error) {
+        console.log('Logout error:', error);
+    }
+}
+
+export const getUser = async () => {
+    try {
+        const token = localStorage.getItem("token");
+        if (!token) return null;
+        const response = await axios.get(`${API_URL}profile`, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+        return response.data;
+    } catch (error) {
+        console.log('Get user error:', error);
+    }
+}

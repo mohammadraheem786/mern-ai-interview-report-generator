@@ -3,15 +3,11 @@ import Navbar from "./components/Navbar.jsx";
 import Login from "./features/auth/pages/Login.jsx";
 import Register from "./features/auth/pages/Register.jsx";
 import Protected from "./features/auth/components/Protected.jsx";
+import PublicOnly from "./features/auth/components/PublicOnly.jsx";
 import AnalyzeInterview from "./features/ai/pages/AnalyzeInterview.jsx";
 import SingleReport from "./features/ai/pages/SingleReport.jsx";
 import ReportHistory from "./features/ai/pages/ReportHistory.jsx";
-import PublicOnly
-from "./features/auth/components/PublicOnly.jsx";
 
-// ─────────────────────────────
-// Layout with Navbar
-// ─────────────────────────────
 const Layout = () => (
     <div className="min-h-screen bg-slate-950 text-white">
         <Navbar />
@@ -20,36 +16,22 @@ const Layout = () => (
 );
 
 export const router = createBrowserRouter([
-
-    // ─────────────────────────────
-    // Public Routes (no navbar)
-    // ─────────────────────────────
     {
-  path: '/login',
-
-  element:
-
-    <PublicOnly>
-
-      <Login />
-
-    </PublicOnly>,
-},
-{
-  path: '/register',
-
-  element:
-
-    <PublicOnly>
-
-      <Register />
-
-    </PublicOnly>,
-},
-
-    // ─────────────────────────────
-    // Protected Routes (with navbar)
-    // ─────────────────────────────
+        path: "/login",
+        element: (
+            <PublicOnly>
+                <Login />
+            </PublicOnly>
+        )
+    },
+    {
+        path: "/register",
+        element: (
+            <PublicOnly>
+                <Register />
+            </PublicOnly>
+        )
+    },
     {
         element: <Layout />,
         children: [

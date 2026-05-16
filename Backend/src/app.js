@@ -1,33 +1,20 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-
-
-
-
-
-
+import authRouter from "./routes/auth-routes.js";
+import interviewRoutes from "./routes/interviewRoutes.js";
 
 const app = express();
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL,  // your Vite frontend URL
-  credentials: true,                // if using cookies/auth headers
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
 }));
 
 app.use(express.json());
 app.use(cookieParser());
 
-import authRouter from "./routes/auth-routes.js";  // ✅ full path
-import interviewRoutes
-from "./routes/interviewRoutes.js"; // ✅ full path
-app.use(
-    "/api/interview",
-    interviewRoutes
-);                        // ✅ valid router
-app.use('/api/auth', authRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/interview", interviewRoutes);
 
-
-
-
-export default app
+export default app;

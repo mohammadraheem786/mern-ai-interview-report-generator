@@ -1,15 +1,12 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { logout } from "../features/auth/services/auth.api";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../features/auth/hooks/useAuth";
 
 const Navbar = () => {
-    const navigate = useNavigate();
     const location = useLocation();
-    const { setUser } = useAuth();
+    const { handleLogout } = useAuth();
 
-    const handleLogout = () => {
-        logout();
-        setUser(null);
+    const handleClick = () => {
+        handleLogout();
         window.location.href = "/login";
     };
 
@@ -32,7 +29,7 @@ const Navbar = () => {
                         History
                     </Link>
                     <button
-                        onClick={handleLogout}
+                        onClick={handleClick}
                         className="bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 hover:text-red-300 transition px-4 py-2 rounded-lg text-sm font-medium"
                     >
                         Logout

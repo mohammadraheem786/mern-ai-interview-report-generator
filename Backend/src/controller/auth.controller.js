@@ -23,7 +23,11 @@ async function registerUser(req, res) {
         await newUser.save();
 
         const token = jwt.sign({ _id: newUser._id, email }, process.env.JWT_SECRET, { expiresIn: "7d" }); // ✅ added expiry
-        res.cookie("token", token, { httpOnly: true });
+        res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,        // ← required for HTTPS
+    sameSite: "none",    // ← required for cross-domain cookies
+});
 
         res.status(201).json({
             message: "User registered successfully",
@@ -53,7 +57,11 @@ async function loginUser(req, res) {
         }
 
         const token = jwt.sign({ _id: userExists._id, email }, process.env.JWT_SECRET, { expiresIn: "7d" }); // ✅ added expiry
-        res.cookie("token", token, { httpOnly: true });
+        res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,        // ← required for HTTPS
+    sameSite: "none",    // ← required for cross-domain cookies
+});
 
         res.status(200).json({
             message: "User logged in successfully",

@@ -1,10 +1,11 @@
 import { ChromaClient } from "chromadb";
 
 const chromaClient = new ChromaClient({
-    path: process.env.CHROMA_URL,
-    auth: {
-        provider: "token",
-        credentials: process.env.CHROMA_AUTH_TOKEN,
+    host: process.env.CHROMA_URL,
+    port: 443,
+    ssl: true,
+    headers: {
+        Authorization: `Bearer ${process.env.CHROMA_AUTH_TOKEN}`
     }
 });
 

@@ -7,7 +7,10 @@ import interviewRoutes from "./routes/interviewRoutes.js";
 const app = express();
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+    origin: [
+        "https://mern-ai-interview-report-generator.vercel.app",
+        "http://localhost:5173"
+    ],
     credentials: true,
 }));
 

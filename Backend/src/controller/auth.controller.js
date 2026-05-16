@@ -30,9 +30,10 @@ async function registerUser(req, res) {
 });
 
         res.status(201).json({
-            message: "User registered successfully",
-            newUser: { id: newUser._id, username, email },
-        });
+    message: "User registered successfully",
+    token,
+    newUser: { id: newUser._id, username, email },
+});
     } catch (error) {
         res.status(500).json({ message: "Error registering user", error: error.message });
     }
@@ -64,9 +65,10 @@ async function loginUser(req, res) {
 });
 
         res.status(200).json({
-            message: "User logged in successfully",
-            user: { id: userExists._id, username: userExists.username, email },
-        });
+    message: "User logged in successfully",
+    token,
+    user: { id: userExists._id, username: userExists.username, email },
+});
     } catch (error) {
         res.status(500).json({ message: "Error logging in user", error: error.message });
     }

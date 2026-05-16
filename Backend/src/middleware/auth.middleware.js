@@ -8,11 +8,13 @@ import blackListTokenModel from "../models/blackListTokenModel.js";
  * If invalid or missing, returns a 401 Unauthorized response
  */
 async function authUser(req, res, next) {
-    const token = req.cookies.token;
+    const authHeader = req.headers.authorization;
 
-    if (!token) {
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
         return res.status(401).json({ message: "Unauthorized" });
     }
+
+    const token = authHeader.split(" ")[1];
 
     const blacklistedToken = await blackListTokenModel.findOne({ token });
     if (blacklistedToken) {
@@ -21,7 +23,6 @@ async function authUser(req, res, next) {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        //console.log("Decoded User:", decoded);
         req.user = decoded;
         next();
     } catch (error) {

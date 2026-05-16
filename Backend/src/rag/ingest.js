@@ -7,7 +7,12 @@ from "../data/interview_rag_dataset_v2.json"
 with { type: "json" };
 
 const client = new ChromaClient({
-    path: "http://localhost:8000"
+    host: "auth-proxy-production-e2f4.up.railway.app",
+    port: 443,
+    ssl: true,
+    headers: {
+        Authorization: `Bearer 4go7k2dxt5xz24if`
+    }
 });
 
 const collections = {

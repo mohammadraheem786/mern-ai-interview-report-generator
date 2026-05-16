@@ -1,7 +1,7 @@
 import { ChromaClient } from "chromadb";
 
 const chromaClient = new ChromaClient({
-    host: process.env.CHROMA_URL,
+    host: "auth-proxy-production-e2f4.up.railway.app",
     port: 443,
     ssl: true,
     headers: {

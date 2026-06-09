@@ -6,7 +6,7 @@ const client = new ChromaClient({
     port: 443,
     ssl: true,
     headers: {
-        Authorization: `Bearer 4go7k2dxt5xz24if`
+        Authorization: "Bearer 4go7k2dxt5xz24if"
     }
 });
 
@@ -34,28 +34,22 @@ const buildMetadata = (item) => ({
 });
 
 const ingestCollection = async (collectionName, items) => {
-
     try {
         await client.deleteCollection({ name: collectionName });
         console.log(`🗑️ Deleted old: ${collectionName}`);
     } catch (_) {}
 
-    // ← no embeddingFunction
     const collection = await client.createCollection({
-        name: collectionName
+        name: collectionName,
+        embeddingFunction: null
     });
 
     const documents = items.map((item) => item.searchable_text);
     const ids = items.map((item) => item.id);
     const metadatas = items.map(buildMetadata);
+    const embeddings = items.map(() => Array(384).fill(0));
 
-    // ← provide embeddings as empty arrays since we use queryTexts on retrieval
-    await collection.add({
-        ids,
-        documents,
-        metadatas,
-        embeddings: items.map(() => Array(384).fill(0)) // ← placeholder embeddings
-    });
+    await collection.add({ ids, documents, metadatas, embeddings });
 
     console.log(`✅ Ingested ${items.length} docs → ${collectionName}`);
 };

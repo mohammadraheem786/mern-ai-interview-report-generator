@@ -1,5 +1,5 @@
 const llmConfig = {
-    provider: "gemini",
+    provider: "groq",
 
     groq: {
         model: "llama-3.1-8b-instant",

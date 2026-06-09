@@ -1,10 +1,5 @@
 import { ChromaClient } from "chromadb";
-import { DefaultEmbeddingFunction }
-from "@chroma-core/default-embed";
-
-import data
-from "../data/interview_rag_dataset_v2.json"
-with { type: "json" };
+import data from "../data/interview_rag_dataset_v2.json" with { type: "json" };
 
 const client = new ChromaClient({
     host: "auth-proxy-production-e2f4.up.railway.app",
@@ -16,172 +11,63 @@ const client = new ChromaClient({
 });
 
 const collections = {
-
-    technical_questions:
-        data.filter(
-            (d) =>
-                d.category ===
-                "technical_question"
-        ),
-
-    behavioral_questions:
-        data.filter(
-            (d) =>
-                d.category ===
-                "behavioral_question"
-        ),
-
-    resume_review_rules:
-        data.filter(
-            (d) =>
-                d.category ===
-                "resume_review"
-        ),
-
-    company_patterns:
-        data.filter(
-            (d) =>
-                d.category ===
-                "company_interview_pattern"
-        ),
-
-    skill_gap_rules:
-        data.filter(
-            (d) =>
-                d.category ===
-                "skill_gap_rule"
-        ),
-
-    role_expectations:
-        data.filter(
-            (d) =>
-                d.category ===
-                "role_expectation"
-        )
-
+    technical_questions: data.filter((d) => d.category === "technical_question"),
+    behavioral_questions: data.filter((d) => d.category === "behavioral_question"),
+    resume_review_rules: data.filter((d) => d.category === "resume_review"),
+    company_patterns: data.filter((d) => d.category === "company_interview_pattern"),
+    skill_gap_rules: data.filter((d) => d.category === "skill_gap_rule"),
+    role_expectations: data.filter((d) => d.category === "role_expectation")
 };
 
 const buildMetadata = (item) => ({
-
-    category:
-        item.category || "",
-
-    chunk_type:
-        item.chunk_type || "",
-
-    role:
-        item.role || "",
-
-    skill:
-        item.skill ||
-        item.missing_skill ||
-        "",
-
-    difficulty:
-        item.difficulty || "",
-
-    experience_level:
-        item.experience_level || "",
-
-    importance_score:
-        item.importance_score || 0,
-
-    company:
-        item.company || "",
-
-    level:
-        item.level || "",
-
-    related_skills:
-        (item.related_skills || [])
-        .join(", "),
-
-    keywords:
-        (item.keywords || [])
-        .join(", ")
-
+    category: item.category || "",
+    chunk_type: item.chunk_type || "",
+    role: item.role || "",
+    skill: item.skill || item.missing_skill || "",
+    difficulty: item.difficulty || "",
+    experience_level: item.experience_level || "",
+    importance_score: item.importance_score || 0,
+    company: item.company || "",
+    level: item.level || "",
+    related_skills: (item.related_skills || []).join(", "),
+    keywords: (item.keywords || []).join(", ")
 });
 
-const ingestCollection = async (
-    collectionName,
-    items
-) => {
+const ingestCollection = async (collectionName, items) => {
 
     try {
-
-        await client.deleteCollection({
-            name: collectionName
-        });
-
-        console.log(
-            `🗑️ Deleted old: ${collectionName}`
-        );
-
+        await client.deleteCollection({ name: collectionName });
+        console.log(`🗑️ Deleted old: ${collectionName}`);
     } catch (_) {}
 
-    const collection =
-    await client.createCollection({
-
-        name: collectionName,
-
-        embeddingFunction:
-            new DefaultEmbeddingFunction()
-
+    // ← no embeddingFunction
+    const collection = await client.createCollection({
+        name: collectionName
     });
 
-    const documents = items.map(
-        (item) =>
-            item.searchable_text
-    );
+    const documents = items.map((item) => item.searchable_text);
+    const ids = items.map((item) => item.id);
+    const metadatas = items.map(buildMetadata);
 
-    const ids = items.map(
-        (item) => item.id
-    );
-
-    const metadatas = items.map(
-        buildMetadata
-    );
-
+    // ← provide embeddings as empty arrays since we use queryTexts on retrieval
     await collection.add({
-
         ids,
         documents,
-        metadatas
-
+        metadatas,
+        embeddings: items.map(() => Array(384).fill(0)) // ← placeholder embeddings
     });
 
-    console.log(
-        `✅ Ingested ${items.length} docs → ${collectionName}`
-    );
-
+    console.log(`✅ Ingested ${items.length} docs → ${collectionName}`);
 };
 
 const ingestAll = async () => {
-
-    console.log(
-        "\n🚀 Starting ingestion...\n"
-    );
-
-    for (
-        const [name, items]
-        of Object.entries(collections)
-    ) {
-
+    console.log("\n🚀 Starting ingestion...\n");
+    for (const [name, items] of Object.entries(collections)) {
         if (items.length > 0) {
-
-            await ingestCollection(
-                name,
-                items
-            );
-
+            await ingestCollection(name, items);
         }
-
     }
-
-    console.log(
-        "\n🎉 All collections ready!\n"
-    );
-
+    console.log("\n🎉 All collections ready!\n");
 };
 
 ingestAll().catch(console.error);
